@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": false, // 暂时关闭类型检测
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "target": "ESNext",
+    "allowJs": true
+  },
+  "exclude": [
+    "node_modules",
+    "node_modules2",
+    "static",
+    "public"
+  ],
+  "vueCompilerOptions": {
+    "target": 2.7,
+    // "target": 2, // For Vue version <= 2.6.14
+  }
+}
