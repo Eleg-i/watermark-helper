@@ -83,7 +83,7 @@ module.exports = {
     'brace-style': [1, '1tbs'], //大括号风格
     'callback-return': 0, //回调后需要有return语句，避免多次调用回调
     // 要求驼峰法命名
-    camelcase: 1,
+    camelcase: 2,
     'comma-dangle': [2, 'never'], //对象字面量项尾不能有逗号
     'comma-spacing': 0, //逗号前后的空格
     'comma-style': [2, 'last'], //逗号风格，换行时在行首还是行尾
@@ -101,15 +101,15 @@ module.exports = {
       2,
       { allowKeywords: true }
     ],
-    'eol-last': 1, // 强制文件末尾以一个换行符结束
-    eqeqeq: 1, // 必须使用全等
+    'eol-last': 2, // 强制文件末尾以一个换行符结束
+    eqeqeq: 2, // 必须使用全等
     'func-names': 0, // 函数表达式必须有名字
     'func-style': [0, 'declaration'], //函数风格，规定只能使用函数声明/函数表达式
     'generator-star-spacing': 2, //生成器函数*的前后空格
     'guard-for-in': 0, // for in循环要用if语句过滤
     'handle-callback-err': 0, // nodejs 处理错误
     'id-length': [
-      1,
+      2,
       {
         max: 25,
         min: 1
@@ -163,7 +163,7 @@ module.exports = {
     'new-cap': 2, // 要求构造函数的首字母必须大写
     'new-parens': 2, // new时必须加小括号
     'newline-per-chained-call': 2, // 要求链式调用必须换行，ignoreChainWithDepth表示无需换行的最大调用深度，默认为2.
-    'no-alert': 1, // 禁止使用alert confirm prompt
+    'no-alert': 2, // 禁止使用alert confirm prompt
     'no-array-constructor': 0, // 禁止使用数组构造器
     'no-async-promise-executor': 0, // 禁止使用异步函数作为Promise执行程序
     'no-bitwise': 0, //禁止使用按位运算符
@@ -186,18 +186,18 @@ module.exports = {
     'no-else-return': 0, //如果if语句里面有return,后面不能跟else语句
     'no-empty': 0, //块语句中的内容不能为空
     'no-empty-character-class': 2, //正则表达式中的[]内容不能为空
-    'no-eq-null': 1, //禁止对null使用==或!=运算符
-    'no-eval': 1, //禁止使用eval
+    'no-eq-null': 2, //禁止对null使用==或!=运算符
+    'no-eval': 2, //禁止使用eval
     'no-ex-assign': 2, //禁止给catch语句中的异常参数赋值
     'no-extend-native': 2, //禁止扩展native对象
     'no-extra-bind': 2, //禁止不必要的函数绑定
     'no-extra-boolean-cast': 2, //禁止不必要的bool转换
     'no-extra-parens': 2, //禁止非必要的括号
     'no-extra-semi': 2, //禁止多余（可省略）的分号
-    'no-fallthrough': 1, //禁止switch穿透
+    'no-fallthrough': 2, //禁止switch穿透
     'no-floating-decimal': 2, //禁止省略浮点数中的0 .5 3.
     'no-func-assign': 2, //禁止重复的函数声明
-    'no-implicit-coercion': 1, //禁止隐式转换
+    'no-implicit-coercion': 2, //禁止隐式转换
     'no-implied-eval': 2, //禁止使用隐式eval
     'no-inline-comments': 0, //禁止行内备注
     'no-inner-declarations': [0, 'functions'], //禁止在块语句中使用声明（变量或函数）
@@ -210,10 +210,10 @@ module.exports = {
     'no-labels': 2, //禁止标签声明
     'no-lone-blocks': 1, //禁止不必要的嵌套块
     'no-lonely-if': 0, //禁止else语句内只有if语句
-    'no-loop-func': 1, //禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
+    'no-loop-func': 2, //禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
     'no-mixed-requires': [0, false], //声明时不能混用声明类型
     'no-mixed-spaces-and-tabs': [2, false], //禁止混用tab和空格
-    'no-multi-spaces': 1, //不能用多余的空格
+    'no-multi-spaces': 2, //不能用多余的空格
     'no-multi-str': 2, //字符串不能用\换行
     'no-multiple-empty-lines': [1, { max: 1 }],
     'no-native-reassign': 2, //不能重写native对象
@@ -222,7 +222,7 @@ module.exports = {
     'no-new': 0, //禁止在使用new构造一个实例后不赋值
     'no-new-func': 0, //禁止使用new Function
     'no-new-object': 0, //禁止使用new Object()
-    'no-new-require': 1, //禁止使用new require
+    'no-new-require': 2, //禁止使用new require
     'no-new-wrappers': 0, //禁止使用new创建包装实例，new String new Boolean new Number
     'no-obj-calls': 0, //不能调用内置的全局对象，比如Math() JSON()
     'no-octal': 0, //禁止使用八进制数字)
@@ -245,18 +245,18 @@ module.exports = {
     'no-shadow': 0, //外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
     'no-shadow-restricted-names': 2, //严格模式中规定的限制标识符不能作为声明时的变量名使用
     'no-spaced-func': 2, //函数调用时 函数名与()之间不能有空格
-    'no-sparse-arrays': 1, //禁止稀疏数组， [1,,2]
+    'no-sparse-arrays': 0, //禁止稀疏数组， [1,,2]
     'no-sync': 0, //nodejs 禁止同步方法
     'no-ternary': 0, //禁止使用三目运算符
     'no-this-before-super': 2, //在调用super()之前不能使用this或super
     'no-throw-literal': 2, //禁止抛出字面量错误 throw "error";
-    'no-trailing-spaces': 1, // 一行结束后面不要有空格
+    'no-trailing-spaces': 2, // 一行结束后面不要有空格
     // 最大空行1
     'no-undef': 2, //未定义变量不能使用
     'no-undef-init': 2, //变量初始化时不能直接给它赋值为undefined
     'no-undefined': 0, //不能使用undefined
     'no-underscore-dangle': 0, //标识符不能以_开头或结尾
-    'no-unexpected-multiline': 1, //避免多行表达式
+    'no-unexpected-multiline': 2, //避免多行表达式
     'no-unneeded-ternary': 2, //禁止不必要的嵌套 var isYes = answer === 1 ? true : false;
     'no-unreachable': 2, //不能有无法执行的代码
     'no-unused-expressions': 0, //禁止无用的表达式
@@ -342,7 +342,7 @@ module.exports = {
         next: ['const', 'let', 'var']
       }
     ],
-    'prefer-const': 1, //对于声明后从未重新分配的变量，需要const声明
+    'prefer-const': 2, //对于声明后从未重新分配的变量，需要const声明
     'prefer-object-spread': 2, // 禁止对空对象使用Object.assign，应该使用解构赋值
     'prefer-reflect': 0, //首选Reflect的方法
     'prefer-spread': 2, //需要展开操作符而不是.apply()
@@ -393,7 +393,7 @@ module.exports = {
     ],
     'spaced-comment': 0, // 注释风格要不要有空格什么的
     strict: 2, // 使用严格模式
-    'template-curly-spacing': 1, // 要求模版字符串大括号内侧需要空格
+    'template-curly-spacing': 2, // 要求模版字符串大括号内侧需要空格
     'use-isnan': 2, // 禁止比较时使用NaN，只能用isNaN()
     'valid-jsdoc': [
       2, // jsdoc 规则校验
@@ -437,7 +437,7 @@ module.exports = {
     'vue/html-closing-bracket-newline': 1, //要求html标签结束符前面需要有换行符
     'vue/html-indent': [
       //限制html换行的缩进量
-      1,
+      2,
       2,
       {
         attribute: 1, //属性缩进的倍数
