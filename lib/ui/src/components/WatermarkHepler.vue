@@ -83,7 +83,30 @@
         </div>
       </el-form-item>
       <el-form-item label="水印图片">
-        <el-input v-model="image.src" placeholder="请输入图片地址，支持 DataURL" />
+        <div class="row">
+          <div class="col">
+            <el-form-item>
+              <div class="slider">
+                <el-input v-model="image.src" placeholder="请输入图片地址，支持 DataURL" />
+              </div>
+            </el-form-item>
+          </div>
+          <div class="col">
+            <el-form-item label="图片透明度" label-width="84px">
+              <div class="slider">
+                <el-slider
+                  v-model="image.alpha.value"
+                  :input-size="formSize"
+                  :max="image.alpha.alphaMax"
+                  :min="image.alpha.alphaMin"
+                  :show-input-controls="false"
+                  :step="0.01"
+                  show-input
+                />
+              </div>
+            </el-form-item>
+          </div>
+        </div>
       </el-form-item>
       <el-form-item label="倾斜角度">
         <div class="slider">
@@ -191,9 +214,7 @@
     </el-form>
     <div class="actions">
       <el-button ref="copyBtn" type="primary" @click="getCfg" @mouseleave.native="submitBtnText = '获取配置'">
-        {{
-          submitBtnText
-        }}
+        {{ submitBtnText }}
       </el-button>
       <el-button type="danger" @click="clear">重置配置</el-button>
     </div>
@@ -275,6 +296,11 @@ export default {
           y: 0,
           yMax: 1000,
           yMin: 0
+        },
+        alpha: {
+          value: 1,
+          alphaMax: 1,
+          alphaMin: 0
         }
       },
       lineHeight: {
@@ -307,6 +333,7 @@ export default {
         font: { fontSize, fontFamily, fontWeight, fontStyle, color },
         gap: { value: gap },
         image: {
+          alpha: { value: alpha },
           src,
           offset: { x: imageOffsetX, y: imageOffsetY }
         },
@@ -327,13 +354,14 @@ export default {
               },
               gap,
               image: {
+                alpha,
                 src,
                 offset: [imageOffsetX, imageOffsetY]
               },
               lineHeight,
               offset: [offsetX, offsetY],
               rotate,
-              zIndex
+              zIndex: Number.isNaN(parseInt(zIndex)) ? zIndex : parseInt(zIndex)
             },
         // 递归合并 config 和 innerConfig 如果 innerConfig 的值为 undefined 则不合并
             merge = (config, innerConfig) => {
@@ -383,6 +411,11 @@ export default {
         gapMin: 0
       }
       this.image = {
+        alpha: {
+          value: 1,
+          alphaMax: 1,
+          alphaMin: 0
+        },
         src: '',
         offset: {
           x: 0,
@@ -487,12 +520,13 @@ export default {
         content,
         font: { fontSize, fontFamily, fontWeight, fontStyle, color } = {},
         gap,
-        image: { src, offset: [imgX, imgY] = [] } = {},
+        image: { alpha, src, offset: [imgX, imgY] = [] } = {},
         lineHeight,
         offset: [x, y] = [],
         rotate,
         zIndex
-      } = data
+      } = data,
+            { image } = this
 
       this.content = content
 
@@ -504,20 +538,21 @@ export default {
         fontWeight
       })
 
-      this.gap.value = gap
+      this.gap.value = gap ?? this.gap.value
 
-      this.image.src = src
-      this.image.offset.x = imgX
-      this.image.offset.y = imgY
+      image.src = src ?? image.src
+      image.offset.x = imgX ?? image.offset.x
+      image.offset.y = imgY ?? image.offset.y
+      image.alpha.value = alpha ?? image.alpha.value
 
-      this.lineHeight.value = lineHeight
+      this.lineHeight.value = lineHeight ?? this.lineHeight.value
 
-      this.offset.x = x
-      this.offset.y = y
+      this.offset.x = x ?? this.offset.x
+      this.offset.y = y ?? this.offset.y
 
-      this.rotate.value = rotate
+      this.rotate.value = rotate ?? this.rotate.value
 
-      this.zIndex = zIndex
+      this.zIndex = zIndex ?? this.zIndex
     }
   }
 }

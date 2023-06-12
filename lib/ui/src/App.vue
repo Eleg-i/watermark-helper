@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import WatermarkHepler from './components/WatermarkHepler.vue'
+import WatermarkHepler from './components/WatermarkHeplerWebComp.vue'
 
 export default {
   components: {
