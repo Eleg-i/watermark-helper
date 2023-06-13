@@ -33,8 +33,10 @@ After importing, you can directly use the `<watermark-hepler>` tag globally.
 Alternatively, you can use the Vue 2 component.
 
 ```javascript
+import '@cailiao/watermark-hepler/vue2-component/style'
 import Component from '@cailiao/watermark-hepler/vue2-component'
 // If your build tool does not support the `exports` field in package.json, you can also directly import the file.
+import '@cailiao/watermark-hepler/lib/ui/dist/Component/style.css'
 import Component from '@cailiao/watermark-hepler/lib/ui/dist/Component/watermarkHeplerUI.esm.browser.min.js'
 
 Vue.component('WatermarkHepler', Component)

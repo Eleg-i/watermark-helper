@@ -33,10 +33,11 @@ import '@cailiao/watermark-hepler'
 亦或是使用 vue2 组件
 
 ```javascript
+import '@cailiao/watermark-hepler/vue2-component/style'
 import Component from '@cailiao/watermark-hepler/vue2-component'
 // 如果工程化软件不支持 package.json 中的 exports 字段，也可以直接导入文件
+import '@cailiao/watermark-hepler/lib/ui/dist/Component/style.css'
 import Component from '@cailiao/watermark-hepler/lib/ui/dist/Component/watermarkHeplerUI.esm.browser.min.js'
 
 Vue.component('WatermarkHepler', Component)
-
 ```
