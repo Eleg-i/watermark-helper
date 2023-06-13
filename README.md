@@ -33,10 +33,8 @@ After importing, you can directly use the `<watermark-helper>` tag globally.
 Alternatively, you can use the Vue 2 component.
 
 ```javascript
-import '@cailiao/watermark-helper/vue2-component/style'
 import Component from '@cailiao/watermark-helper/vue2-component'
 // If your build tool does not support the `exports` field in package.json, you can also directly import the file.
-import '@cailiao/watermark-helper/lib/ui/dist/Component/style.css'
 import Component from '@cailiao/watermark-helper/lib/ui/dist/Component/watermarkHelperUI.esm.browser.min.js'
 
 Vue.component('WatermarkHelper', Component)

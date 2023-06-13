@@ -389,6 +389,10 @@ export default {
   mounted() {
     rootEl = this.$el
   },
+  beforeDestroy() {
+    rootEl = null
+    this._unWatchBox?.()
+  },
   methods: {
     clear() {
       this.content = ''
@@ -485,7 +489,7 @@ export default {
     init() {
       const { watermark } = this.$refs
 
-      watchBox(watermark.$el, record => {
+      this._unWatchBox = watchBox(watermark.$el, record => {
         const { inlineSize: width, blockSize: height } = record[0].contentBoxSize[0]
 
         this.resetMax({ width, height })
@@ -498,12 +502,14 @@ export default {
             { watermark } = $refs.watermark,
             angle = -rotate.value * PI / 180
 
-      gap.gapMax = max(100, ceil((width * cos(angle) + height * sin(angle)) / 20) * 10)
-      offset.xMax = watermark.blockWidth + gap.value
-      offset.yMax = max(100, ceil((width * sin(angle) + height * cos(angle)) / 25) * 10)
-      offset.yMin = watermark.blockHeight
-      imageOffset.xMax = offset.xMax
-      imageOffset.yMax = offset.yMax
+      if (watermark) {
+        gap.gapMax = max(100, ceil((width * cos(angle) + height * sin(angle)) / 20) * 10)
+        offset.xMax = watermark.blockWidth + gap.value
+        offset.yMax = max(100, ceil((width * sin(angle) + height * cos(angle)) / 25) * 10)
+        offset.yMin = watermark.blockHeight
+        imageOffset.xMax = offset.xMax
+        imageOffset.yMax = offset.yMax
+      }
     },
     watchRotateGapHandler() {
       const { $el: watermark } = this.$refs.watermark

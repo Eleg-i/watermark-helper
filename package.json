@@ -10,12 +10,10 @@
       "import": "./dist/watermarkHelper.esm.browser.min.js",
       "require": "./dist/watermarkHelper.cjs.browser.min.js"
     },
-    "./style": "./dist/style.css",
     "./vue2-component": {
       "import": "./lib/ui/dist/Component/watermarkHelper.esm.browser.min.js",
       "require": "./lib/ui/dist/Component/watermarkHelper.cjs.browser.min.js"
-    },
-    "./vue2-component/style": "./lib/ui/dist/Component/style.css"
+    }
   },
   "entry": [
     "index.ts"
@@ -23,7 +21,7 @@
   "outfile": "watermarkHelper",
   "files": [
     "dist",
-    "types/index.d.ts",
+    "types",
     "lib/ui/dist"
   ],
   "keywords": [
