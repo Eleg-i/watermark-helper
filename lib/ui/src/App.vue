@@ -1,15 +1,15 @@
 <template>
   <div class="app">
-    <WatermarkHepler />
+    <WatermarkHelper />
   </div>
 </template>
 
 <script>
-import WatermarkHepler from './components/WatermarkHeplerWebComp.vue'
+import WatermarkHelper from './components/WatermarkHelperWebComp.vue'
 
 export default {
   components: {
-    WatermarkHepler
+    WatermarkHelper
   }
 }
 </script>

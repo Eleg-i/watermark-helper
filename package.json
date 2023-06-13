@@ -1,26 +1,26 @@
 {
-  "name": "@cailiao/watermark-hepler",
+  "name": "@cailiao/watermark-helper",
   "version": "0.1.0",
   "description": "水印开发帮助工具",
   "type": "module",
-  "module": "dist/watermarkHepler.esm.browser.min.js",
-  "main": "dist/watermarkHepler.cjs.browser.min.js",
+  "module": "dist/watermarkHelper.esm.browser.min.js",
+  "main": "dist/watermarkHelper.cjs.browser.min.js",
   "exports": {
     ".": {
-      "import": "./dist/watermarkHepler.esm.browser.min.js",
-      "require": "./dist/watermarkHepler.cjs.browser.min.js"
+      "import": "./dist/watermarkHelper.esm.browser.min.js",
+      "require": "./dist/watermarkHelper.cjs.browser.min.js"
     },
     "./style": "./dist/style.css",
     "./vue2-component": {
-      "import": "./lib/ui/dist/Component/watermarkHeplerUI.esm.browser.min.js",
-      "require": "./lib/ui/dist/Component/watermarkHeplerUI.cjs.browser.min.js"
+      "import": "./lib/ui/dist/Component/watermarkHelper.esm.browser.min.js",
+      "require": "./lib/ui/dist/Component/watermarkHelper.cjs.browser.min.js"
     },
     "./vue2-component/style": "./lib/ui/dist/Component/style.css"
   },
   "entry": [
     "index.ts"
   ],
-  "outfile": "watermarkHepler",
+  "outfile": "watermarkHelper",
   "files": [
     "dist",
     "types/index.d.ts",
@@ -32,12 +32,12 @@
   "author": "cailiao(Eleg-i)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Eleg-i/watermark-hepler.git"
+    "url": "git+https://github.com/Eleg-i/watermark-helper.git"
   },
   "bugs": {
-    "url": "https://github.com/Eleg-i/watermark-hepler/issues"
+    "url": "https://github.com/Eleg-i/watermark-helper/issues"
   },
-  "homepage": "https://github.com/Eleg-i/watermark-hepler/#readme",
+  "homepage": "https://github.com/Eleg-i/watermark-helper/#readme",
   "license": "ISC",
   "scripts": {
     "build-watch": "node ./script/esbuild.watch.js",
@@ -73,7 +73,7 @@
     "lint-staged": "latest"
   },
   "dependencies": {
-    "@cailiao/watermark-hepler-ui": "file:lib/ui",
+    "@cailiao/watermark-helper-ui": "file:lib/ui",
     "@vue/web-component-wrapper": "^1.3.0"
   }
 }

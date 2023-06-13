@@ -1,8 +1,8 @@
 <template>
-  <div class="watermark-hepler">
+  <div class="watermark-helper">
     <h4 class="title">水印开发帮助工具</h4>
     <Watermark ref="watermark" v-bind="watermarkCfg" @inited="init">
-      <div class="watermark-hepler-demo-content">
+      <div class="watermark-helper-demo-content">
         <p>本工具是 <code> @cailiao/watermark </code> 的水印可视化编辑工具。</p>
         <p>本工具的有效参数有水印字体，水印图片，倾斜角度，行间隔，行高，偏移量等。</p>
         <p>其它参数，如定位叠层，也可以在本工具调整，但是其实时预览没参考意义，需要至具体场景比较。</p>
@@ -561,7 +561,7 @@ export default {
 <style lang="scss" scoped>
 $defaultWidth: 700px;
 
-.watermark-hepler {
+.watermark-helper {
   --demo-background-color: hsla(0, 0%, 90%);
 
   display: inline-block;
@@ -571,7 +571,7 @@ $defaultWidth: 700px;
     text-align: center;
   }
 
-  .watermark-hepler-demo-content {
+  .watermark-helper-demo-content {
     width: $defaultWidth - 20px;
     resize: both;
     overflow: auto;

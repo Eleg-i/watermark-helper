@@ -1,12 +1,12 @@
 {
-  "name": "@cailiao/watermark-hepler-ui",
+  "name": "@cailiao/watermark-helper-ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "module": "dist/watermarkHeplerUI.esm.browser.min.js",
-  "main": "dist/watermarkHeplerUI.cjs.browser.min.js",
-  "entry": "src/components/WatermarkHeplerWebComp.vue",
-  "outfile": "watermarkHeplerUI",
+  "module": "dist/watermarkHelperUI.esm.browser.min.js",
+  "main": "dist/watermarkHelperUI.cjs.browser.min.js",
+  "entry": "src/components/WatermarkHelperWebComp.vue",
+  "outfile": "watermarkHelperUI",
   "scripts": {
     "dev": "vite",
     "build-watch": "vite build --watch",

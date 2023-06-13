@@ -1,4 +1,4 @@
-# watermark/watermark-hepler —— 水印开发帮助插件
+# watermark/watermark-helper —— 水印开发帮助插件
 
 简体中文 | [English](../README.md)
 
@@ -11,7 +11,7 @@
 安装依赖包
 
 ```bash
-npm i @cailiao/watermark-hepler
+npm i @cailiao/watermark-helper
 ```
 
 ## 使用
@@ -19,25 +19,25 @@ npm i @cailiao/watermark-hepler
 使用 web Component
 
 ```javascript
-import '@cailiao/watermark-hepler'
+import '@cailiao/watermark-helper'
 ```
 
-引入后可直接全局使用 \<watermark-hepler\> 标签
+引入后可直接全局使用 \<watermark-helper\> 标签
 
 ```html
 <div>
-  <watermark-hepler />
+  <watermark-helper />
 </div>
 ```
 
 亦或是使用 vue2 组件
 
 ```javascript
-import '@cailiao/watermark-hepler/vue2-component/style'
-import Component from '@cailiao/watermark-hepler/vue2-component'
+import '@cailiao/watermark-helper/vue2-component/style'
+import Component from '@cailiao/watermark-helper/vue2-component'
 // 如果工程化软件不支持 package.json 中的 exports 字段，也可以直接导入文件
-import '@cailiao/watermark-hepler/lib/ui/dist/Component/style.css'
-import Component from '@cailiao/watermark-hepler/lib/ui/dist/Component/watermarkHeplerUI.esm.browser.min.js'
+import '@cailiao/watermark-helper/lib/ui/dist/Component/style.css'
+import Component from '@cailiao/watermark-helper/lib/ui/dist/Component/watermarkHelperUI.esm.browser.min.js'
 
-Vue.component('WatermarkHepler', Component)
+Vue.component('WatermarkHelper', Component)
 ```

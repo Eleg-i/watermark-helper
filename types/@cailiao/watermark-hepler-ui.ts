@@ -1,5 +1,5 @@
-// Path: @cailiao/watermark-hepler-ui
+// Path: @cailiao/watermark-helper-ui
 export {}
-declare module '@cailiao/watermark-hepler-ui' {
+declare module '@cailiao/watermark-helper-ui' {
   export = Object
 }

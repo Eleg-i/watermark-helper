@@ -1,15 +1,15 @@
 <script>
-import WatermarkHepler from './WatermarkHepler.vue'
+import WatermarkHelper from './WatermarkHelper.vue'
 export default {
   render(h) {
-    return h(WatermarkHepler)
+    return h(WatermarkHelper)
   }
 }
 </script>
 
 <style lang="scss" scoped>
 // 导入私有全局样式
-.watermark-hepler ::v-deep {
+.watermark-helper ::v-deep {
   @import 'element-ui/lib/theme-chalk/input';
   @import 'element-ui/lib/theme-chalk/button';
   @import 'element-ui/lib/theme-chalk/form';

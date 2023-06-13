@@ -1,4 +1,4 @@
-# watermark/watermark-hepler
+# watermark/watermark-helper
 
 [简体中文](readme/README-zh-cn.md) | English
 
@@ -11,7 +11,7 @@ A GUI for configuring the watermark plugin. Supports native web components and V
 Install the dependency package:
 
 ```bash
-npm i @cailiao/watermark-hepler
+npm i @cailiao/watermark-helper
 ```
 
 ## Usage
@@ -19,25 +19,25 @@ npm i @cailiao/watermark-hepler
 Use web Component
 
 ```javascript
-import '@cailiao/watermark-hepler'
+import '@cailiao/watermark-helper'
 ```
 
-After importing, you can directly use the `<watermark-hepler>` tag globally.
+After importing, you can directly use the `<watermark-helper>` tag globally.
 
 ```html
 <div>
-  <watermark-hepler />
+  <watermark-helper />
 </div>
 ```
 
 Alternatively, you can use the Vue 2 component.
 
 ```javascript
-import '@cailiao/watermark-hepler/vue2-component/style'
-import Component from '@cailiao/watermark-hepler/vue2-component'
+import '@cailiao/watermark-helper/vue2-component/style'
+import Component from '@cailiao/watermark-helper/vue2-component'
 // If your build tool does not support the `exports` field in package.json, you can also directly import the file.
-import '@cailiao/watermark-hepler/lib/ui/dist/Component/style.css'
-import Component from '@cailiao/watermark-hepler/lib/ui/dist/Component/watermarkHeplerUI.esm.browser.min.js'
+import '@cailiao/watermark-helper/lib/ui/dist/Component/style.css'
+import Component from '@cailiao/watermark-helper/lib/ui/dist/Component/watermarkHelperUI.esm.browser.min.js'
 
-Vue.component('WatermarkHepler', Component)
+Vue.component('WatermarkHelper', Component)
 ```

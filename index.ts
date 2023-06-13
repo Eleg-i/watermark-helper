@@ -1,14 +1,14 @@
-import Component from '@cailiao/watermark-hepler-ui'
+import Component from '@cailiao/watermark-helper-ui'
 import Vue from 'vue'
-import styleText from '@cailiao/watermark-hepler-ui/dist/style.css'
+import styleText from '@cailiao/watermark-helper-ui/dist/style.css'
 import wrap from '@vue/web-component-wrapper'
 
-const InnerWatermarkHepler = wrap(Vue, Component) as unknown as typeof HTMLDivElement & { shadowRoot: Element }
+const InnerWatermarkHelper = wrap(Vue, Component) as unknown as typeof HTMLDivElement & { shadowRoot: Element }
 
 /**
  * 水印组件
  */
-class WatermarkHepler extends InnerWatermarkHepler {
+class WatermarkHelper extends InnerWatermarkHelper {
   /**
    * 构造函数
    */
@@ -21,4 +21,4 @@ class WatermarkHepler extends InnerWatermarkHepler {
   }
 }
 
-window.customElements.define('watermark-hepler', WatermarkHepler)
+window.customElements.define('watermark-helper', WatermarkHelper)
