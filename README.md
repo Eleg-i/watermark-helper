@@ -1,6 +1,6 @@
 # watermark/watermark-hepler
 
-简体中文 | [English](readme/README-zh-cn.md)
+[简体中文](readme/README-zh-cn.md) | English
 
 ## Description
 
