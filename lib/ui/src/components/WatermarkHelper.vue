@@ -21,7 +21,7 @@
       <el-form-item label="水印文本">
         <el-input v-model="content" :size="formSize" type="textarea" placeholder="请输入水印文本内容" />
       </el-form-item>
-      <el-form-item label="字体：" class="" label-position="top">
+      <el-form-item label="字体：" class="wrapper" label-position="top">
         <div class="row">
           <div class="col">
             <el-form-item label="文本字体">
@@ -82,7 +82,7 @@
           </div>
         </div>
       </el-form-item>
-      <el-form-item label="水印图片">
+      <el-form-item label="水印图片" class="wrapper">
         <div class="row">
           <div class="col">
             <el-form-item>
@@ -132,7 +132,7 @@
           />
         </div>
       </el-form-item>
-      <el-form-item label="水印偏移">
+      <el-form-item label="水印偏移" class="wrapper">
         <div class="row">
           <div class="col">
             <el-form-item label="水平偏移">
@@ -176,7 +176,7 @@
           </div>
         </el-form-item>
       </el-form-item>
-      <el-form-item label="图片偏移">
+      <el-form-item label="图片偏移" class="wrapper">
         <div class="row">
           <div class="col">
             <el-form-item label="水平偏移">
@@ -581,17 +581,20 @@ $defaultWidth: 700px;
   }
 
   .dev-tools {
-    margin-top: 22px;
+    margin-top: 12px;
     width: $defaultWidth;
 
-    .el-form-item {
+    .el-form-item.el-form-item {
       margin-bottom: 10px;
+
+      &.wrapper {
+        margin-bottom: 3px;
+      }
 
       .row {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 6px;
 
         .col {
           $gap: 12px;
@@ -637,6 +640,7 @@ $defaultWidth: 700px;
         ::v-deep {
           .el-slider__input {
             width: 60px;
+            margin-top: 0;
           }
 
           .el-slider__runway.show-input {
