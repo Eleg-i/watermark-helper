@@ -505,7 +505,7 @@ export default {
       if (watermark) {
         gap.gapMax = max(100, ceil((width * cos(angle) + height * sin(angle)) / 20) * 10)
         offset.xMax = watermark.blockWidth + gap.value
-        offset.yMax = max(100, ceil((width * sin(angle) + height * cos(angle)) / 25) * 10)
+        offset.yMax = max(100, ceil((width * sin(angle) + height * cos(angle)) / 25) * 10, watermark.blockHeight + 10)
         offset.yMin = watermark.blockHeight
         imageOffset.xMax = offset.xMax
         imageOffset.yMax = offset.yMax
@@ -572,13 +572,15 @@ $defaultWidth: 700px;
 
   display: inline-block;
   padding: 12px;
+  box-sizing: border-box;
 
   .title {
     text-align: center;
   }
 
   .watermark-helper-demo-content {
-    width: $defaultWidth - 20px;
+    width: $defaultWidth;
+    box-sizing: border-box;
     resize: both;
     overflow: auto;
     border-radius: 5px 5px 0 5px;
@@ -589,6 +591,7 @@ $defaultWidth: 700px;
   .dev-tools {
     margin-top: 12px;
     width: $defaultWidth;
+    box-sizing: border-box;
 
     .el-form-item.el-form-item {
       margin-bottom: 10px;
