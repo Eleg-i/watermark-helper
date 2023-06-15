@@ -487,12 +487,16 @@ export default {
       this.submitBtnText = '已复制到剪切板'
     },
     init() {
+      var timer
       const { watermark } = this.$refs
 
       this._unWatchBox = watchBox(watermark.$el, record => {
         const { inlineSize: width, blockSize: height } = record[0].contentBoxSize[0]
 
-        this.resetMax({ width, height })
+        clearTimeout(timer)
+        setTimeout(() => {
+          this.resetMax({ width, height })
+        }, 35)
       })
     },
     resetMax({ width, height }) {
