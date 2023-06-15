@@ -17,7 +17,7 @@ function build(platform) {
  * @param {String} format 构建的模块类型
  * @param {String} platform 构建的平台类型
  */
-function buildInFormat(format, platform) {
+async function buildInFormat(format, platform) {
   const config = {
     bundle: true,
     entryPoints: entry,
@@ -31,7 +31,7 @@ function buildInFormat(format, platform) {
     target: 'esnext'
   }
 
-  esbuild.build(config).catch(() => process.exit(1))
+  await esbuild.build(config).catch(() => process.exit(1))
   config.minify = false
   config.outfile = `dist/${outfile}.${format}.${platform}.js`
   esbuild.build(config).catch(() => process.exit(1))

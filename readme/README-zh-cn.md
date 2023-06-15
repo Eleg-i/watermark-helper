@@ -33,6 +33,8 @@ import '@cailiao/watermark-helper'
 亦或是使用 vue2 组件
 
 ```javascript
+// 导入组件样式
+import '@cailiao/watermark-helper/lib/ui/dist/Component/style.min.css'
 import Component from '@cailiao/watermark-helper/vue2-component'
 // 如果工程化软件不支持 package.json 中的 exports 字段，也可以直接导入文件
 import Component from '@cailiao/watermark-helper/lib/ui/dist/Component/watermarkHelperUI.esm.browser.min.js'

@@ -9,13 +9,14 @@
   "outfile": "watermarkHelperUI",
   "scripts": {
     "dev": "vite",
-    "build-watch": "vite build --watch",
+    "build-watch": "node script/build-watch.js",
     "build": "node script/build.js",
     "preview": "vite preview"
   },
   "peerDependencies": {
+    "element-ui": "^2.15.13",
     "vue": "^2.7.14",
-    "element-ui": "^2.15.13"
+    "@cailiao/watermark-vue2-component": "file:../../../vue2-component"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "^2.2.0",

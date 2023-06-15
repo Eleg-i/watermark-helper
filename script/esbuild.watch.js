@@ -1,5 +1,7 @@
+import alias from 'esbuild-plugin-alias'
 import esbuild from 'esbuild'
 import packageJson from '../package.json' assert { type: 'json' }
+import { resolve } from 'path'
 
 const { entry, outfile } = packageJson
 
@@ -17,28 +19,37 @@ function build(platform) {
  * @param {String} format 构建的模块类型
  * @param {String} platform 构建的平台类型
  */
-function buildInFormat(format, platform) {
-  esbuild
-    .build({
-      bundle: true,
-      entryPoints: entry,
-      format,
-      loader: {
-        '.css': 'text'
-      },
-      minify: false,
-      outfile: `dist/${outfile}.${format}.${platform}.min.js`,
-      platform,
-      target: 'es2022',
-      watch: {
-        onRebuild(error, result) {
-          if (error) console.error('watch build failed:', error)
-          // eslint-disable-next-line no-console
-          else console.log('watch build succeeded:', result)
-        }
+async function buildInFormat(format, platform) {
+  const config = {
+    bundle: true,
+    entryPoints: entry,
+    format,
+    loader: {
+      '.css': 'text'
+    },
+    minify: true,
+    outfile: `dist/${outfile}.${format}.${platform}.min.js`,
+    platform,
+    plugins: [
+      alias({
+        '@cailiao/watermark-helper-ui': resolve(process.cwd(), './lib/ui/dist/watermarkHelperUI.esm.browser.js'),
+        '@cailiao/watermark-helper-ui/dist/style.css': resolve(process.cwd(), './lib/ui/dist/style.css')
+      })
+    ],
+    target: 'esnext',
+    watch: {
+      onRebuild(error, result) {
+        if (error) console.error('watch build failed:', error)
+        // eslint-disable-next-line no-console
+        else console.log('watch build succeeded:', result)
       }
-    })
-    .catch(() => process.exit(1))
+    }
+  }
+
+  await esbuild.build(config).catch(() => process.exit(1))
+  config.minify = false
+  config.outfile = `dist/${outfile}.${format}.${platform}.js`
+  esbuild.build(config).catch(() => process.exit(1))
 }
 
 // build('node')
